@@ -1,17 +1,17 @@
 FROM node:6-alpine
 
-# WORKDIR /usr/src/app
+WORKDIR /usr/src/app
 
-# RUN apk add --no-cache tini
+RUN apk add --no-cache tini
 
-# COPY package.json \
-#      package-lock.json \
-#      ./
+COPY package.json \
+     package-lock.json \
+     ./
 
-# RUN npm i
+RUN npm i
 
-# COPY . .
+COPY . .
 
-# EXPOSE 3000
+EXPOSE 3000
 
-# CMD ["node", "./bin/www"]
+CMD ["node", "./bin/www"]
